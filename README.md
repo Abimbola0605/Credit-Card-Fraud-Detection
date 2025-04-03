@@ -163,7 +163,7 @@ I broke this project into 8 steps to make sure I covered everything. Here’s wh
      - For interpretation: shap.
 
 ##### What’s in My Project
-- Fraud_Detection.ipynb: My main notebook with all my code and results.
+- CreditFruad.ipynb: My main notebook with all my code and results.
 - Creditcard.csv: The dataset I used (you can get it from Kaggle).
 - README.md: This report I wrote to explain everything.
 - Requirements.txt: The libraries you need to run my code.
@@ -173,10 +173,11 @@ I broke this project into 8 steps to make sure I covered everything. Here’s wh
     - Python 3.11+.
     - Google Colab or Jupyter Notebook on your computer.
     - Libraries: pandas, numpy, scikit-learn, seaborn, matplotlib, shap.
+      
 2. Steps:
 - Clone my repository: git clone https://github.com/yourusername/credit-card-fraud-detection.git.
 - Install the libraries: pip install -r requirements.txt.
-- Open Fraud_Detection.ipynb in Google Colab.
+- Open CreditFruad.ipynb in Google Colab.
 - Mount your Google Drive and put creditcard.csv in /content/drive/MyDrive/.
 - Run the cells one by one to see my results.
 
@@ -190,6 +191,7 @@ I broke this project into 8 steps to make sure I covered everything. Here’s wh
 - Build an API: I’d love to turn my prediction function into a real Flask API.
 - Think About Ethics: I’d look into how false positives affect customers and check for any biases in my model.
 - Test in Production: I’d simulate a real system to see how my model does over time.
+
 
 #### 🌟 Why This Matters to Me
 I’m really proud of this project because it shows what I can do with data science. I took a tough problem—detecting fraud in a super imbalanced dataset—and built a model that works well and makes sense. Focusing on V17 was my idea, and seeing it play such a big role in my results felt rewarding. I also learned a lot about interpreting models with SHAP and PDPs, which I think is so important for real-world use. My model is ready to go live, and I’ve thought about how to make it work in a real system, which makes me excited about using data science to solve real problems.
