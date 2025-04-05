@@ -96,18 +96,18 @@ I broke this project into 8 steps to make sure I covered everything. Here’s wh
 
 #### Step 7: Understanding My Model
 - What I Did:
-   - I looked at feature importance in my RF model to see which features mattered most.
-   - I used SHAP to dig deeper into how features like V17 affect predictions, creating summary plots and a force plot for one fraud case.
-   - I added Partial Dependence Plots (PDPs) to see how V17 and its interaction with V14 impact fraud predictions.
+  - I looked at feature importance in my RF model to see which features mattered most.
+  - I used SHAP to dig deeper into how features like V17 affect predictions, creating summary plots and a force plot for one fraud case.
+  - I added a Partial Dependence Plot (PDP) to see how V17 impacts fraud predictions.
 - What I Found:
-   - Feature Importance: V17_boost (0.181), V17 (0.172), V14 (0.117), V12 (0.093), V10 (0.089) were the top features.
-   - SHAP Analysis:
-        - V12, V17_boost, and V17 were the biggest drivers of fraud predictions.
-        - High V17 values usually mean fraud, but I was surprised to see that low V17 values can also point to fraud in some cases (e.g., in the force plot, a V17 of -13.6 added 0.23 to the fraud probability).
-        - The force plot showed a 90% fraud probability, with V3 (0.46), V17 (0.23), and V17_boost (0.23) pushing it up.
-   - PDPs:
-        - The PDP for V17 showed a non-linear effect: as V17 increases from -1.0 to -0.5, the fraud probability slightly decreases (from ~0.0021925 to ~0.0021750). It then drops sharply around V17 = -0.5 to 0.5, staying low at ~0.0021750, before rising again past V17 = 0.5. This means higher V17 values (above 0.5) increase fraud likelihood, while values around -0.5 to 0.5 are linked to lower fraud probability.
-        - The 2D PDP for V17 and V14 revealed that high V17 combined with low V14 values significantly increases the fraud probability, confirming their interaction as a key fraud indicator, which matches my SHAP findings.
+  - Feature Importance: V17_boost (0.181), V17 (0.172), V14 (0.117), V12 (0.093), V10 (0.089) were the top features.
+- SHAP Analysis:
+  - V12, V17_boost, and V17 were the biggest drivers of fraud predictions.
+  - High V17 values usually mean fraud, but I was surprised to see that low V17 values can also point to fraud in some cases (e.g., in the force plot, a V17 of -13.6 added 0.23 to the fraud probability).
+  - The force plot showed a 90% fraud probability, with V3 (0.46), V17 (0.23), and V17_boost (0.23) pushing it up.
+    
+ - PDPs:
+   - The PDP for V17 showed a non-linear effect: as V17 increases from -1.0 to -0.5, the fraud probability slightly decreases (from ~0.0021925 to ~0.0021750). It then drops sharply around V17 = -0.5 to 0.5, staying low at ~0.0021750, before rising again past V17 = 0.5. This means higher V17 values (above 0.5) increase fraud likelihood, while values around -0.5 to 0.5 are linked to lower fraud probability. This matches my SHAP findings that V17 plays a big role in predicting fraud, but its effect isn’t always straightforward.
     
 #### Step 8: Getting Ready for the Real World
 - What I Did:
